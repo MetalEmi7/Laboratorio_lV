@@ -10,7 +10,6 @@ class ComposerAutoloaderInitaccfc71aa45007d1cbfc3193c778e28c
     {
         if ('Composer\Autoload\ClassLoader' === $class)
         {
-            echo "HOLA MUNDO";
             require __DIR__ . '/ClassLoader.php';
         }
     }
