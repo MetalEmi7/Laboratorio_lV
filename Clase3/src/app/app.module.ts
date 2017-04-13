@@ -8,15 +8,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { AltaComponent } from './alta/alta.component';
 
 const appRoutes: Routes = [
   { path: 'Logeo', component: LoginComponent },
+  { path: 'Alta', component: AltaComponent },
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    AltaComponent
   ],
   imports: [
     BrowserModule,
