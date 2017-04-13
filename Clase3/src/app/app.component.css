@@ -112,3 +112,32 @@ body {
 
 
 
+
+
+
+
+th{
+  color: #fff;
+  background-color:#28d;
+  margin: 16px auto;
+  padding: 12px;
+}
+
+a{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+}
+
+a:link{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+}
+
+a:visited{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+}
+
+h1{
+
+}
