@@ -9,17 +9,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AltaComponent } from './alta/alta.component';
+import { BajaComponent } from './baja/baja.component';
 
 const appRoutes: Routes = [
   { path: 'Logeo', component: LoginComponent },
   { path: 'Alta', component: AltaComponent },
+  { path: 'Baja', component: BajaComponent },
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    AltaComponent
+    AltaComponent,
+    BajaComponent
   ],
   imports: [
     BrowserModule,
