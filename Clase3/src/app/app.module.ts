@@ -12,7 +12,7 @@ import { AltaComponent } from './alta/alta.component';
 import { BajaComponent } from './baja/baja.component';
 
 const appRoutes: Routes = [
-  { path: 'Logeo', component: LoginComponent },
+  { path: 'Login', component: LoginComponent },
   { path: 'Alta', component: AltaComponent },
   { path: 'Baja', component: BajaComponent },
 ]

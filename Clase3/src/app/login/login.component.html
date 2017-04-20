@@ -1,15 +1,44 @@
-<p>login funcionando!</p>
+<head>  
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+/*
+    var app = angular.module('myApp', []);
 
-<div class="login">
-  <div class="login-triangle"></div>
-  
-  <h2 class="login-header">Log in</h2>
+    app.controller("myCtrl", function($scope)    {
+      $scope.firstName = "John";
+    });
+*/
+</script>
 
-  <form class="login-container">
-    <p><input type="text" placeholder="Usuario"></p>
-    <p><input type="password" placeholder="Password"></p>
-    <p><input type="submit" value="Log in"></p>
-  </form>
+</head>
+<p>Login funcionando!</p>
+
+<!--
+<div ng-app="myApp" ng-controller="myCtrl">
+  {{firstName + " " + lastName}}
 </div>
 
+Requiero de las librerias de angular.
 
+-->
+
+
+
+<body>
+<div class="login">
+    {{nombre}}
+
+
+  <div class="login-triangle"></div>
+  <h2 class="login-header">Log in</h2>
+
+
+  <form class="login-container" method="GET">
+    <p><input type="text"  id="txtUsuario" ng-model="usuario" placeholder="Usuario"></p>
+    <p><input type="password" id="pasPassword" ng-model="pass" placeholder="Password"></p>
+    <p><input type="submit" id="SubLogin" value="Login"></p>
+  </form>
+  
+
+</div>
+
+</body>
