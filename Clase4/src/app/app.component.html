@@ -1,18 +1,27 @@
-<h1>{{title}}</h1>
-
 <html>  
   <head></head>
 
   <body>
-    <form>
-      <input type="text" name="nombre">
-      <input type="email" name="email">
-      <input type="text" name="edad">
+    <h1>{{title}}</h1>
 
-      <input type="submit" name="submit" (click)="miEvento($event)">
+    <div>
+    <form *ngIf="showForm">
+      <input type="text" name="nombre" [(ngModel)]="form.nombre" >
+      <input type="email" name="email" [(ngModel)]="form.email">
+      <input type="text" name="edad" [(ngModel)]="form.edad">
+
+      <input type="submit" name="submit" (click)="miEvento($event, form)">
+
+
+      <ul>
+        <li *ngFor="let item of datos let i =index">
+           {{"Indice: "+ i +" "+ item.nombre +" "+ item.email +" "+ item.edad}}
+        </li>
+      </ul>
 
 
     </form>  
+    </div>
 
   </body>
 

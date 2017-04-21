@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Person } from './entidades/persona';   // La ruta de la importacion siempre debe ser en minuscula, sin importar si tiene mayus. el archivo en cuestion. Verificar esto con detalle
 
 @Component({
   selector: 'app-root',
@@ -8,17 +9,40 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'Clase 4 - Funcionando!';
+  showForm = true;
+
+  datos:Array<Person>=[{
+    nombre:"Emiliano",
+    email:"Metalemi7@gmail.com",
+    edad: 26
+    },    
+    {
+    nombre:"Anastassia",
+    email:"Anis88@gmail.com",
+    edad: 15
+    },
+    {
+    nombre:"Adolfo",
+    email:"Ee_viejo_garca@gmail.com",
+    edad: 58
+    }];
 
   form ={
-    nombre: "miNombre",
-    email:"miMail@email.email"
+    nombre:"miNombre",
+    email:"miMail@email.email",
+    edad: 26
   };  
 
-miEvento(e){
-  console.log(e);
-  
 
+
+//Metodos
+miEvento(e, form){
+  console.log(e);
+  console.log(form);   
 }
+
+
+
 
 
 }
