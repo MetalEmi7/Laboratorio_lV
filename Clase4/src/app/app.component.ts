@@ -9,7 +9,7 @@ import { Person } from './entidades/persona';   // La ruta de la importacion sie
 
 export class AppComponent {
   title = 'Clase 4 - Funcionando!';
-  showForm = true;
+  showForm = true;  //Muestra formulario; ver en HTML.
 
   datos:Array<Person>=[{
     nombre:"Emiliano",
@@ -23,9 +23,11 @@ export class AppComponent {
     },
     {
     nombre:"Adolfo",
-    email:"Ee_viejo_garca@gmail.com",
+    email:"El_viejo_garca@gmail.com",
     edad: 58
     }];
+
+
 
   form ={
     nombre:"miNombre",

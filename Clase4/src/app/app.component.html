@@ -14,8 +14,15 @@
 
 
       <ul>
-        <li *ngFor="let item of datos let i =index">
-           {{"Indice: "+ i +" "+ item.nombre +" "+ item.email +" "+ item.edad}}
+        <li *ngFor="let item of datos; let i = index; let f = first; let l = last">
+           {{ i }} <!-- Indice -->
+           {{"Nombre: "+ item.nombre}} <!-- Nombre -->
+           {{" - "+ item.edad+" - "+ item.email}} <!-- EMail y Edad-->
+           <br>
+           {{ "PRIMER INDICE?: "+ f }} <!-- Indice -->
+           <br>
+           {{ "ULTIMO INDICE?: "+ l }} <!-- Indice -->
+           <br><br>
         </li>
       </ul>
 
