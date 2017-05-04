@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'; //Para realizar peticiones; Respetar Mayusculas.
 import 'rxjs/add/operator/toPromise';      //Nos provee herramientos para manejar datos.
-import { Ng2SmartTableModule } from 'ng2-smart-table';   
+import { Ng2SmartTableModule, LocalDataSource  } from 'ng2-smart-table';   
 
 import { DatosService } from "./servicios/datos.service";
 /* Luego de haber importado en el modulo, se hace lo mismo aca.
@@ -15,54 +15,30 @@ no se lo agrega en 'imports' de 'ngModule' del Modulo */
 })
 
 export class AppComponent {
-  title = 'Clase 4 - Funcionando!';
-  showForm = true;  //Muestra formulario; ver en HTML.
-  showDiv_EjemploListado = false;  //Muestra Listado usando las TAGs <ul> y <li>; ver en HTML.
+  title = 'Clase 5 - !';
+  source_test: LocalDataSource;
 
-  ArrayDatos:DatosService;  
+
+  showForm = true;  //Muestra formulario; ver en HTML.
+
+  sets = {
+    noDataMessage:"Cargando...",
+    pager:{perPage:5},
+    columns:
+    {
+      name:
+        {title:"Nombre"},    
+      alpha2Code:
+        {title:"Codigo"},
+    }  
+  };
+
 
 //creamos variable de tipo 'DatosService' dentro de los parametros del constructor.
-constructor (private dates:DatosService){
-  console.log("Constructor: app.component.ts");
-  console.log(dates.traerDatos()); 
-  
-}
+constructor (private datos:DatosService){
 
+   this.source_test = new LocalDataSource();
 
-sets={
-  actions:{
-    edit: true,
-    add: true,
-    delete: true,
-    cancel: true,
-    editConfirm: true,
-    confirmeSave: true,
-  },
-    edit:{
-    editButtonContent:"Modificar",
-    create:true,
-    cancel:true,
-    confirmSave:true
-  },
-  noDataMessage:"No existen registros",
-  pager:{
-    perPage:5,
-  },
-  columns:{
-    nombre:{
-      title:"Nombre",
-      editable: true,
-      editor:{
-        type:"textArea",
-      },
-    },
-    edad:{
-      title:"Edad",
-    },
-    email:{
-      title:"E-Mail",
-    }
-  },
 }
 
 
@@ -86,11 +62,14 @@ log_Edit(e){
   e.confirm.resolve(e.newData);
 }
 
-
-
-
-ngOnInit() {
-  this.dates.traerDatos()
+ngOnInit()
+{
+  this.datos.traerDatos()
+  .then(data=>{
+    this.source_test.load(data)
+    console.log(data)
+  })
+  .catch(error=> console.log(error));
 }
 
 

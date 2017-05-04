@@ -6,29 +6,23 @@ import 'rxjs/add/operator/toPromise';           //Nos provee herramientos para m
 export class DatosService {
 
 
-  constructor(public http:Http) {
-
-    console.log("Cons: Servicio");
+  constructor(private http:Http) {
   }
 
 
   //Metodos
-traerDatos() {  
-
-    this.http.get("https://restcountries.eu/rest/v2/all")
-    .toPromise()
-    .then(this.extractData)
-    .catch(this.error);
-
-  /*
+traerDatos() {
     //Url extaida desde   https://restcountries.eu/#api-endpoints-all
     let url = 'https://restcountries.eu/rest/v2/all';
 
+    // let federal = this.http.get("https://restcountries.eu/rest/v2/all")=>console.log();
+
     //then y catch se ejecuta asinconicamente
-    return this.http.get('https://restcountries.eu/rest/v2/all')
+    
+    return this.http.get(url)
       .toPromise()
       .then(this.extractData)
-      .catch(this.error);*/
+      .catch(this.error);
 }
 
   extractData(Res: Response){
@@ -38,16 +32,5 @@ traerDatos() {
   error(error: Response){
     return error;
   }
-
-
-
-  getClientes():string[]{
-    return [
-      'Maria',
-      'Maria2',
-      'Maria3',
-    ]    
-  }
-
 }
  

@@ -1,17 +1,6 @@
 import { Component } from '@angular/core';
-
-//Agregado
-import { Person } from './entidades/persona';   
-/* La ruta de la importacion siempre debe ser en minuscula, 
-sin importar si tiene mayus. el archivo en cuestion. 
-Verificar esto con detalle. */
-
+import { Person } from './entidades/persona';   // La ruta de la importacion siempre debe ser en minuscula, sin importar si tiene mayus. el archivo en cuestion. Verificar esto con detalle
 import { Ng2SmartTableModule } from 'ng2-smart-table';   
-
-import { DatosService } from "./servicios/datos.service";
-/* Luego de haber importado en el modulo, se hace lo mismo aca.
-Tal como se hizo con 'Ng2SmartTable', solo que a diferencia de este, 
-no se lo agrega en 'imports' de 'ngModule' del Modulo */
 
 @Component({
   selector: 'app-root',

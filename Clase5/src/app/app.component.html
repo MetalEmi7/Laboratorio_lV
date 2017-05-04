@@ -13,28 +13,10 @@
       <input type="submit" name="submit" (click)="miEvento($event, form)">
       <br><br><br>
 
-      <ng2-smart-table [settings]="sets" [source]="datos" (editConfirm)="log_Edit($event)"></ng2-smart-table>
+      <ng2-smart-table [settings]="sets" [source]="source_test"></ng2-smart-table>
 
-
-
-<div *ngIf="showDiv_EjemploListado">
-      <ul>
-        <li *ngFor="let item of datos; let i = index; let f = first; let l = last">
-           {{ i }} <!-- Indice -->
-           {{"Nombre: "+ item.nombre}} <!-- Nombre -->
-           {{" - "+ item.edad+" - "+ item.email}} <!-- EMail y Edad-->
-           <br>
-           {{ "PRIMER INDICE?: "+ f }}
-           <br>
-           {{ "ULTIMO INDICE?: "+ l }} 
-
-           <!-- Directivas ngFor: https://angular.io/docs/ts/latest/api/common/index/NgFor-directive.html -->
-           <br><br>
-        </li>
-      </ul>
-</div>
-
-    </form>  
+ </form>  
+   
     </div>
 
   </body>
